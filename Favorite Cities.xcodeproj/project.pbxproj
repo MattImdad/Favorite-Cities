@@ -14,6 +14,7 @@
 		BAABF31423C8DC3E00594798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAABF31223C8DC3E00594798 /* Main.storyboard */; };
 		BAABF31623C8DC4200594798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAABF31523C8DC4200594798 /* Assets.xcassets */; };
 		BAABF31923C8DC4200594798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAABF31723C8DC4200594798 /* LaunchScreen.storyboard */; };
+		BAABF32323C8DFAA00594798 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABF32223C8DFAA00594798 /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BAABF31523C8DC4200594798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAABF31823C8DC4200594798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAABF31A23C8DC4200594798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAABF32223C8DFAA00594798 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BAABF31523C8DC4200594798 /* Assets.xcassets */,
 				BAABF31723C8DC4200594798 /* LaunchScreen.storyboard */,
 				BAABF31A23C8DC4200594798 /* Info.plist */,
+				BAABF32223C8DFAA00594798 /* City.swift */,
 			);
 			path = "Favorite Cities";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAABF30B23C8DC3E00594798 /* AppDelegate.swift in Sources */,
+				BAABF32323C8DFAA00594798 /* City.swift in Sources */,
 				BAABF30D23C8DC3E00594798 /* SceneDelegate.swift in Sources */,
 				BAABF30F23C8DC3E00594798 /* MasterViewController.swift in Sources */,
 				BAABF31123C8DC3E00594798 /* DetailViewController.swift in Sources */,
