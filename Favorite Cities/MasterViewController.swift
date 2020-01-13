@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
+    var cities = [City]()
 
 
     override func viewDidLoad() {
@@ -34,10 +34,37 @@ class MasterViewController: UITableViewController {
 
     @objc
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
+        let alert = UIAlertController(title: "Add City", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+           textField.placeholder = "City"
+        }
+        alert.addTextField { (textField) in
+           textField.placeholder = "State"
+        }
+        alert.addTextField { (textField) in
+           textField.placeholder = "Population"
+           textField.keyboardType = .numberPad
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let insertAction = UIAlertAction(title: "Add", style: .default) { (action) in
+        let cityTextField = alert.textFields![0] as UITextField
+        let stateTextField = alert.textFields![1] as UITextField
+        let populationTextField = alert.textFields![2] as UITextField
+        guard let image = UIImage(named: cityTextField.text!) else{
+           print("missing \(cityTextField.text!) image")
+           return }
+        if let population = Int(populationTextField.text!) {
+           let city = City(name: cityTextField.text!,
+                         state: stateTextField.text!,
+                     population: population,
+                         image: image.pngData()!)
+           self.cities.append(city)
+           self.tableView.reloadData()
+        }
     }
+        alert.addAction(insertAction)
+        present(alert, animated: true, completion: nil)
 
     // MARK: - Segues
 
