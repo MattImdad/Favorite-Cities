@@ -22,29 +22,28 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func configureView() {
-       // Update the user interface for the detail item
-       if let city = self.detailItem {
-          if cityTextField != nil {
-             cityTextField.text = city.name
-             stateTextField.text = city.state
-             populationTextField.text = String(city.population)
-             imageView.image = UIImage(data: city.image)
-          }
-       }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureView()
     }
     
+    func configureView() {
+       // Update the user interface for the detail item
+       if let City = self.detailItem {
+          if cityTextField != nil {
+             cityTextField.text = City.name
+             stateTextField.text = City.state
+             populationTextField.text = String(City.population)
+             imageView.image = UIImage(data: City.image)
+          }
+       }
+    }
     override func viewWillDisappear(_ animated: Bool) {
-        if let city = self.detailItem {
-           city.name = cityTextField.text!
-           city.state = stateTextField.text!
-           city.population = Int(populationTextField.text!)!
+        if let City = self.detailItem {
+           City.name = cityTextField.text!
+           City.state = stateTextField.text!
+           City.population = Int(populationTextField.text!)!
         }
     }
 }
